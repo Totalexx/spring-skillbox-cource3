@@ -1,0 +1,7 @@
+services:
+  student-shell:
+    stdin_open: true
+    tty: true
+    image: student-shell
+    environment:
+      - STUDENT_GENERATOR_ENABLED=true
