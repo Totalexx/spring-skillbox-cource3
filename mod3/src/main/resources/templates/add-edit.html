@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="/">Назад</a>
+    <form method="post" th:action="${contact != null} ? '/edit' : '/add'">
+        <input name="id" th:value="${contact} != null ? ${contact.getId()} : ''" hidden="">
+        <label>
+            Имя<br>
+            <input name="firstName" th:value="${contact} != null ? ${contact.getFirstName()} : ''">
+        </label><br>
+        <label>
+            Фамилия<br>
+            <input name="lastName" th:value="${contact} != null ? ${contact.getLastName()} : ''">
+        </label><br>
+        <label>
+            Телефон<br>
+            <input name="phone" th:value="${contact} != null ? ${contact.getPhone()} : ''">
+        </label><br>
+        <label>
+            Email<br>
+            <input name="email" th:value="${contact} != null ? ${contact.getEmail()} : ''">
+        </label><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
